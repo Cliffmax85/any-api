@@ -11,4 +11,15 @@ describe('any-api routes', () => {
   afterAll(() => {
     pool.end();
   });
+
+  it('creates a poolplayer', async () => {
+    const expected = {
+      name: 'Shane Van Boening',
+      age: 39,
+      cue: 'CueTec', 
+    };
+    const res = await request(app).post('/api/v1/poolplayers').send(expected);
+
+    expect(res.body).toEqual({ id: expect.any(String), ...expected });
+  });
 });
