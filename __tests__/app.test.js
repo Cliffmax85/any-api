@@ -37,4 +37,19 @@ describe('any-api routes', () => {
 
     expect(res.body).toEqual({ ...expected });
   });
+
+  it('updates a pool player by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      name: 'mikje',
+      age: 23,
+      cue: 'viking',
+    };
+    const res = await request(app)
+      .patch('/api/v1/poolplayers')
+      .send({ cue: 'viking' });
+    
+    expect(res.body).toEqual(expected);
+  });
+
 });
