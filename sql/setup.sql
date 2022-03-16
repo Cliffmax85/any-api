@@ -8,3 +8,11 @@ CREATE TABLE poolplayers (
     age INT NOT NULL,
     cue TEXT
 );
+
+
+INSERT INTO 
+  poolplayers (name, age, cue)
+VALUES
+  ('Corey DEUEl', 46, 'Meucci'),
+  ('Alex Blair', 36, 'Predator butt with a Mezz shaft'),
+  ('Earl Strickland', 62, 'Some wierd tennis wrapped break cue');
