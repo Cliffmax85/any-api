@@ -39,7 +39,6 @@ describe('any-api routes', () => {
   });
 
   it('updates a pool player by id', async () => {
-    // const player = await Poolplayer.insert({ name: 'Corey', age: 23, cue: 'Meucci' });
     const expected = {
       id: expect.any(String),
       name: 'Corey DEUEl',
