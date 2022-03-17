@@ -32,23 +32,23 @@ describe('any-api routes', () => {
   });
 
   it('gets a pool player by id', async () => {
-    const expected = await Poolplayer.findById(2);
+    const expected = await Poolplayer.findById(1);
     const res = await request(app).get(`/api/v1/poolplayers/${expected.id}`);
 
     expect(res.body).toEqual({ ...expected });
   });
 
   it('updates a pool player by id', async () => {
+    // const player = await Poolplayer.insert({ name: 'Corey', age: 23, cue: 'Meucci' });
     const expected = {
       id: expect.any(String),
-      name: 'mikje',
-      age: 23,
-      cue: 'viking',
+      name: 'Corey DEUEl',
+      age: 46,
+      cue: 'viking'
     };
     const res = await request(app)
-      .patch('/api/v1/poolplayers')
+      .patch('/api/v1/poolplayers/1')
       .send({ cue: 'viking' });
-    
     expect(res.body).toEqual(expected);
   });
 
