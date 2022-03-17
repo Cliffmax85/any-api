@@ -52,4 +52,10 @@ describe('any-api routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('deletes a player by id', async () => {
+    const expected = await Poolplayer.findById(2);
+    const res = await request(app).delete(`/api/v1/poolplayers/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });
